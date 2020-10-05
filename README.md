@@ -12,7 +12,7 @@ commands which can make out life easier.
 It is used to store all the local changes (staged and unstaged changes) for future use and reverts them from your working copy. It takes you back to the working
 directory HEAD commit (last commit).
 
-### Commiting all modified files
+### Stashing all modified files
 
 For commiting all modified files
 
@@ -26,7 +26,7 @@ git stash push
 ```
 It stores all the changes in a queue and these changes will be present in your local repository, not in remote repository.
 
-### Fetching back files from last commit.
+### Fetching last stashed files
 
 ```js
 git stash apply
@@ -36,7 +36,8 @@ or
 ```js
 git stash pop
 ```
-These commands will bring back all the last stashed changes to the current working directory.
+These commands will bring back all the last stashed changes to the current working directory. The difference between apply and pop is that in case of pop, it will bring back the changes but will not remove it from the stash queue, you have to manually remove it from queue using <b>'git stash drop'</b>, in case of apply it will 
+bring back last changes and removes it from the stash queue.
 
 ### checking all last stashed files.
 
