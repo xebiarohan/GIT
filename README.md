@@ -97,3 +97,53 @@ This command is used when we want to stash multiple files but not all the files.
 git stash clear
 ```
 It will remove all the stash items from the queue.
+
+
+## Resetting branch
+
+git reset - It resets the current branch HEAD to a specfic state, it has 3 different form --hard, --soft and --mixed
+
+### Hard resetting
+It is the most widely used option, it is used when we are 100% sure to go to a particular commit and want to discard all the changes done after than incuding the 
+staged, unstaged changes and all the commit done after that commit.
+
+```js
+git reset --hard {commit-id}
+```
+
+If you just want to remove all the staged changes and move back to the HEAD of the branch (most recently committed code) then
+
+```js
+git reset --hard HEAD
+```
+
+If you want to remove all the commits happen on any particular branch
+
+```js
+git reset --hard HEAD^
+```
+
+
+### Soft resetting 
+Resets the pointer to the commit with the given commit id and add all the files of all commits following the given commit in the staged changes.
+It is used in the scenarios like we did some mistage in the last commit or added some extra files. So we can reset the files and bring back them in staged state and
+update the desired files or remove few files from commit using 'git reset {name of the file}' and can commit again.
+
+```js
+git reset --soft {commit-id}
+```
+
+Then we can unstaged the file which we want to update using 'git reset {name of the file}', update it and can push it again.
+
+### Mixed resetting
+It is the default resetting policy, it is similar to --soft resetting the only difference is that it takes all the files to unstaged state.It is used in the scenarios
+like when we want to commit 1 or 2 files and by mistake we added all the files in the commit. So we can reset all the files in unstaged state and can select our desired files which we want to commit again.
+
+```js
+git reset --mixed {commit-id}
+```
+or
+
+```
+git reset {commit-id}
+```
