@@ -147,3 +147,14 @@ or
 ```
 git reset {commit-id}
 ```
+
+## Reverting commit
+
+Reverts all the changes done in the given commit-id and add a new commit to maintain the history of deleting the commit.
+This command requires your working tree to be clean (no modifications from the HEAD commit).
+
+```js
+git revert {commit-id}
+```
+
+Reverting undoes a commit by creating a new commit, where as git reset does alter the existing commit history. For this reason, git revert should be used to undo changes on a public branch, and git reset should be reserved for undoing changes on a private branch.
