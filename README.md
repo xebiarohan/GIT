@@ -189,7 +189,7 @@ The -d option tells git to remove untracked directories too. If you don’t want
 -n is used to do a dry-run, it will show all the files that will be deleted.
 
 
-### Limititng directory for untracked files
+### Removing untracked files from a directory
 
 If you want to limit the clean operation to given directories, pass the paths to the directories to be checked for untracked files as arguments to the command. For example, to check for files under the src directory, you would run:
 
