@@ -158,3 +158,48 @@ git revert {commit-id}
 ```
 
 Reverting undoes a commit by creating a new commit, where as git reset does alter the existing commit history. For this reason, git revert should be used to undo changes on a public branch, and git reset should be reserved for undoing changes on a private branch.
+
+## Fetching remote branches
+
+It is used to fetch all the remote branches which may be created by other developers working on the same repository.
+
+```js
+git fetch --all
+```
+
+It will fetch all remote branches.
+
+## Removing unwanted files
+Used to remove untracked, ignored files from the repository. Sometimes IDE creates some files in our local project repository, or my mistake we adds some files.
+So to remove all these files we can use these commands.
+
+### Removing untracked files
+To interactively delete untracked files
+
+```js
+git clean -d -i 
+```
+
+The best thing about this command is it will ask you before deleting all the files, you can delete all files togather, can select files to delete by pattern like (\*.js) or can select by sequence number etc.
+
+The -d option tells git to remove untracked directories too. If you don’t want to delete empty untracked directories, omit -d option.
+
+-i is for interactive.
+
+-n is used to do a dry-run, it will show all the files that will be deleted.
+
+
+### Limititng directory for untracked files
+
+If you want to limit the clean operation to given directories, pass the paths to the directories to be checked for untracked files as arguments to the command. For example, to check for files under the src directory, you would run:
+
+```js
+git clean -d -n {src}
+```
+
+### Removing ignored files
+If you want to remove only the ignored files and directories, use the -X option:
+
+```js
+git clean -d -n -X
+```
