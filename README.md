@@ -12,7 +12,7 @@ commands which can make out life easier.
 It is used to store all the local changes (staged and unstaged changes) for future use and reverts them from your working copy. It takes you back to the working
 directory HEAD commit (last commit).
 
-### Stashing all modified files
+#### Stashing all modified files
 
 For commiting all modified files
 
